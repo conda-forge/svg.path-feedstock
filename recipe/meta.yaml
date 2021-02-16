@@ -1,5 +1,5 @@
 {% set name = "svg.path" %}
-{% set version = "4.0.2" %}
+{% set version = "4.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4bd627ec6526cd5da14f3c6a51205d930187db2d8992aed626825492c033b195
+  sha256: 7e6847ba690ff620e20f152818d52e1685b993aacbc41b321f8fee3d1cb427db
 
 build:
   number: 0
