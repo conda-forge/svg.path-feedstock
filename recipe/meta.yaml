@@ -10,7 +10,7 @@ source:
     sha256: c7791d7e578b8a0c942c15d08aa0d7c46c7a1df153d4eaa2ed667a7962a354c2
   # TODO: remove after https://github.com/regebro/svg.path/pull/79
   - fn: src/svg/path/tests/din1451e.ttf
-    url: https://github.com/regebro/svg.path/raw/{{ version }}/src/svg/path/tests/din1451e.ttf
+    url: https://raw.githubusercontent.com/regebro/svg.path/{{ version }}/src/svg/path/tests/din1451e.ttf
     sha256: 8de62051b842c414018e66459bc0a2a46b480a338ad854fde976576321a7a230
 
 build:
