@@ -1,13 +1,12 @@
-{% set name = "svg.path" %}
-{% set version = "4.1" %}
+{% set version = "5.0.1" %}
 
 package:
-  name: {{ name }}
+  name: svg.path
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7e6847ba690ff620e20f152818d52e1685b993aacbc41b321f8fee3d1cb427db
+  url: https://pypi.io/packages/source/s/svg.path/svg.path-{{ version }}.tar.gz
+  sha256: f269c3ba2186bd483654aa53bee0f3b917104a5bebc98b03678da6f5b8180526
 
 build:
   number: 0
@@ -17,9 +16,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=2.7
+    - python >=3.6
   run:
-    - python >=2.7
+    - python >=3.6
 
 test:
   imports:
@@ -27,8 +26,9 @@ test:
     - svg.path
   commands:
     - pip check
-    - pytest --pyargs svg.path --cov svg.path --cov-fail-under 97
+    - pytest --pyargs svg.path --cov svg.path -k "not test_image" --cov-report term-missing:skip-covered --cov-fail-under 91
   requires:
+    - pillow
     - pip
     - pytest-cov
 
