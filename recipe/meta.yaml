@@ -17,9 +17,9 @@ build:
 requirements:
   host:
     - pip
-    - python >=2.7
+    - python >=3.6
   run:
-    - python >=2.7
+    - python >=3.6
 
 test:
   imports:
@@ -31,6 +31,7 @@ test:
   requires:
     - pip
     - pytest-cov
+    - pillow
 
 about:
   home: https://github.com/regebro/svg.path
