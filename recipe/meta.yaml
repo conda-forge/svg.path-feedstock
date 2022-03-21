@@ -26,11 +26,10 @@ test:
     - svg.path
   commands:
     - pip check
-    - pytest --pyargs svg.path --cov svg.path --cov-fail-under 97
+    - pytest --pyargs svg.path --cov svg.path -k "not test_image" --cov-report term-missing:skip-covered --cov-fail-under 91
   requires:
     - pip
     - pytest-cov
-    - pillow
 
 about:
   home: https://github.com/regebro/svg.path
