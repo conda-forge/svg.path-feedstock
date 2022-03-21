@@ -28,6 +28,7 @@ test:
     - pip check
     - pytest --pyargs svg.path --cov svg.path -k "not test_image" --cov-report term-missing:skip-covered --cov-fail-under 91
   requires:
+    - pillow
     - pip
     - pytest-cov
 
