@@ -1,4 +1,4 @@
-{% set version = "5.0.1" %}
+{% set version = "5.1" %}
 
 package:
   name: svg.path
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/s/svg.path/svg.path-{{ version }}.tar.gz
-  sha256: f269c3ba2186bd483654aa53bee0f3b917104a5bebc98b03678da6f5b8180526
+  sha256: 0a5b52abb04640d982ff7108e4dd30c78403bb4cd958c24ba2f09476d5d9230b
 
 build:
   number: 0
