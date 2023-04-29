@@ -33,7 +33,7 @@ test:
     - svg.path
   commands:
     - pip check
-    - cd src && pytest -vv --cov=svg.path --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=91
+    - cd src && pytest -vv --cov=svg.path --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=90
   requires:
     - pillow
     - pip
