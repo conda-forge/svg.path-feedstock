@@ -5,28 +5,34 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/s/svg.path/svg.path-{{ version }}.tar.gz
-  sha256: e937740a316a7fec86acd217ab6226e112f51328078524126bb7ea9dbe7b1ade
+  - folder: dist
+    url: https://pypi.io/packages/source/s/svg.path/svg.path-{{ version }}.tar.gz
+    sha256: e937740a316a7fec86acd217ab6226e112f51328078524126bb7ea9dbe7b1ade
+  - folder: src
+    url: https://github.com/regebro/svg.path/archive/refs/tags/{{ version }}.tar.gz
+    sha256: ef46901a99bacdad339b6157b2349f3791627bde12b62946837fbe6ebd17104d
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: cd dist && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.8
   run:
-    - python >=3.6
+    - python >=3.8
 
 test:
+  source_files:
+     - src/tests
   imports:
     - svg
     - svg.path
   commands:
     - pip check
-    - pytest -vv --pyargs svg.path --cov svg.path -k "not (test_image or test_doc)" --cov-report term-missing:skip-covered --cov-fail-under 91
+    - cd src && pytest -vv --cov=svg.path --cov-branch --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=91
   requires:
     - pillow
     - pip
@@ -36,7 +42,7 @@ about:
   home: https://github.com/regebro/svg.path
   summary: SVG path objects and parser
   license: MIT
-  license_file: LICENSE.txt
+  license_file: dist/LICENSE.txt
 
 extra:
   recipe-maintainers:
