@@ -27,6 +27,7 @@ requirements:
 test:
   source_files:
      - src/tests
+     - src/README.rst
   imports:
     - svg
     - svg.path
