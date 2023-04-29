@@ -1,11 +1,11 @@
-About svg.path
-==============
+About svg.path-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/svg.path-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/regebro/svg.path
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/svg.path-feedstock/blob/main/LICENSE.txt)
 
 Summary: SVG path objects and parser
 
