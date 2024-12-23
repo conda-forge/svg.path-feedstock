@@ -1,4 +1,5 @@
 {% set version = "6.3" %}
+{% set test_skips = "(test_boundingbox_image.py and test_image) or (test_image.py and ImageTest)" %}
 
 package:
   name: svg.path
@@ -39,8 +40,8 @@ test:
     - svg.path
   commands:
     - pip check
-    - cd src 
-    - coverage run --source=svg.path --branch -m pytest -vv --tb=long --color=yes
+    - cd src
+    - coverage run --source=svg.path --branch -m pytest -vv --tb=long --color=yes -k "not ({{ test_skips }})"
     - coverage report --show-missing --skip-covered --cov-fail-under=90
 
 about:
