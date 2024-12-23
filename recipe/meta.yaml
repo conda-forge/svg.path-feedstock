@@ -6,23 +6,23 @@ package:
 
 source:
   - folder: dist
-    url: https://pypi.io/packages/source/s/svg.path/svg.path-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/s/svg.path/svg.path-{{ version }}.tar.gz
     sha256: e937740a316a7fec86acd217ab6226e112f51328078524126bb7ea9dbe7b1ade
   - folder: src
     url: https://github.com/regebro/svg.path/archive/refs/tags/{{ version }}.tar.gz
     sha256: ef46901a99bacdad339b6157b2349f3791627bde12b62946837fbe6ebd17104d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: cd dist && {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   source_files:
@@ -38,6 +38,7 @@ test:
     - pillow
     - pip
     - pytest-cov
+    - python {{ python_min }}
 
 about:
   home: https://github.com/regebro/svg.path
