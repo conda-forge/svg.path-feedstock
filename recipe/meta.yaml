@@ -1,4 +1,4 @@
-{% set version = "7.0" %}
+{% set version = "7.1" %}
 {% set test_skips = "(test_boundingbox_image.py and test_image) or (test_image.py and ImageTest)" %}
 
 package:
@@ -8,10 +8,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.org/packages/source/s/svg.path/svg_path-{{ version }}.tar.gz
-    sha256: 9037486957cb1dcf4375ef42206499a47c111b8ffcbac6e3e55f9d079d875bb0
+    sha256: 1cd254c974dc96cbee3a0cfc6528356866356b712f241b4e9066043ab8703d9b
   - folder: src
     url: https://github.com/regebro/svg.path/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 4ddee994047d362a55568d03e43f0a5b9625f1f2737009a78aea74985e5919b7
+    sha256: e3745f9741aefe017f2580a09dbf759eccf0972867a60ba7f8b8c0973bd7be94
 
 build:
   number: 0
